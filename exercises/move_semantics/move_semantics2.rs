@@ -11,8 +11,8 @@
 
 fn main() {
     let vec0 = Vec::new();
-
-    let mut vec1 = fill_vec(vec0);
+    let vec = vec0.clone();
+    let mut vec1 = fill_vec(vec);
 
     println!("{} has length {}, with contents: `{:?}`", "vec0", vec0.len(), vec0);
 

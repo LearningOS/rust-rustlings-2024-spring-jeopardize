@@ -9,9 +9,20 @@
 
 struct ColorClassicStruct {
     // TODO: Something goes here
+        red: i32,
+        green: i32,
+        blue: i32,
 }
 
-struct ColorTupleStruct(/* TODO: Something goes here */);
+struct ColorTupleStruct(u8, u8, u8);
+let green = ColorClassicStruct {
+    red: 0,
+    green: 255,
+    blue: 0,
+};
+// 元组的初始化及绑带
+let green = ColorTupleStruct(0, 255, 0);
+// 实例化一个单元类
 
 #[derive(Debug)]
 struct UnitLikeStruct;
