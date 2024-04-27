@@ -15,6 +15,7 @@
 
 
 fn main() {
+    println!("wjx is here");
     println!("Hello and");
     println!(r#"       welcome to...                      "#);
     println!(r#"                 _   _ _                  "#);
