@@ -9,7 +9,20 @@
 
 enum Message {
     // TODO: implement the message variant types based on their usage below
+    ChangeColor((u8, u8, u8)),
+    Echo(String),
+    Move(Point),
+    Quit,
 }
+// match函数
+match message{
+    Message::ChangeColor(t)         =>  self.change_color(t),
+    Message::Echo(msg)              => self.echo(msg),
+    Message::Move(point)            => self.move_position(point),
+    Message::Quit                   => self.quit(), 
+};
+// 括号？
+state.process(Message::ChangeColor((255, 0, 255)));
 
 struct Point {
     x: u8,
