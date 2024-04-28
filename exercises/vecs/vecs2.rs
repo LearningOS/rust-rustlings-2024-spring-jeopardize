@@ -26,6 +26,7 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
         // Vec, you can just return the new number!
         num = num*2;
     }).collect()
+    v
 }
 
 #[cfg(test)]
