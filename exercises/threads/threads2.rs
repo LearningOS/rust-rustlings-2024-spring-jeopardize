@@ -8,8 +8,7 @@
 // hint.
 
 // I AM NOT DONE
-
-use std::sync::Arc;
+use std::sync::{Arc,Mutex};
 use std::thread;
 use std::time::Duration;
 
@@ -18,14 +17,15 @@ struct JobStatus {
 }
 
 fn main() {
-    let status = Arc::new(JobStatus { jobs_completed: 0 });
+    let status = Arc::new(Mutex::new(JobStatus { jobs_completed: 0 }));// 声明互斥对象
     let mut handles = vec![];
     for _ in 0..10 {
-        let status_shared = Arc::clone(&status);
+        let status_shared = status.clone();// 拷贝对象
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
-            status_shared.lock().unwrap().jobs_completed += 1;
+            let mut s_shared = status_shared.lock().unwrap();
+            s_shared.jobs_completed += 1;
         });
         handles.push(handle);
     }

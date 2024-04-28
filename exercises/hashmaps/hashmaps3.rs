@@ -40,6 +40,7 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // goals scored by team_2 will be the number of goals conceded by
         // team_1.
         
+
     }
     scores
 }
