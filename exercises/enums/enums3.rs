@@ -22,7 +22,7 @@ match message{
     Message::Quit                   => self.quit(), 
 };
 // 括号？
-state.process(Message::ChangeColor((255, 0, 255)));
+
 
 struct Point {
     x: u8,
@@ -56,6 +56,7 @@ impl State {
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
+        state.process(Message::ChangeColor((255, 0, 255)));
     }
 }
 

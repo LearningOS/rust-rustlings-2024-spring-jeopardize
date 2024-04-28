@@ -12,7 +12,7 @@ fn trim_me(input: &str) -> String {
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There's multiple ways to do this!
-    format!("{} world",input)
+    format!("{} world!", input) //
 }
 
 fn replace_me(input: &str) -> String {
