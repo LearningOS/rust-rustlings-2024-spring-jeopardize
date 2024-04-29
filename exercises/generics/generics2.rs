@@ -8,7 +8,7 @@
 
 // I AM NOT DONE
 
-struct Wrapper {
+struct Wrapper<T> {
     value: T,
 }
 
@@ -17,6 +17,7 @@ impl<T> Wrapper<T> {
         Wrapper { value }
     }
 }
+
 
 #[cfg(test)]
 mod tests {
